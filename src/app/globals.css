@@ -8,19 +8,48 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+dialog {
+  @apply bg-white rounded-lg shadow-lg px-2 py-1 m-auto;
+}
+
+.table-td-left {
+  @apply pr-2 text-zinc-600 font-light;
+}
+
+.table-td-right {
+  @apply font-medium;
+}
+
+.sticky-header {
+  @apply text-left text-sm font-semibold px-4 py-3 border-b border-zinc-200 whitespace-nowrap sticky top-0 z-10;
+  @apply bg-indigo-50 text-indigo-900;
+}
+
+.table-currencies-td {
+  @apply align-top px-4 py-3 text-sm text-zinc-900 border-b border-zinc-100;
+}
+
+.country-button {
+  @apply text-indigo-800 hover:text-indigo-950 underline underline-offset-2;
+}
+
+.styled-input {
+  @apply w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-zinc-900 outline-none;
+  @apply focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100;
+}
+
+.page-heading {
+  @apply text-3xl font-semibold tracking-tight text-indigo-900 pb-2 border-b-4 border-zinc-200 mt-4;
 }
